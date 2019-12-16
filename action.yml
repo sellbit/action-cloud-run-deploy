@@ -17,6 +17,15 @@ inputs:
   region:
     description: 'GCP region'
     required: true
+  memory:
+    description: 'Memory size'
+    required: false
+  concurrency:
+    description: 'Concurrency count'
+    required: false
+  allow_unauth:
+    description: 'Allow public access to service, true or false'
+    required: false
   service key:
     description: 'GCP service key with storage and run permissions'
     required: true
