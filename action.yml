@@ -29,6 +29,9 @@ inputs:
   service key:
     description: 'GCP service key with storage and run permissions'
     required: true
+  cloud_sql_instance_name:
+    description: 'GCP Cloud SQL Instance'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'

@@ -34,6 +34,11 @@ else
     ENV_FLAG="--clear-env-vars"
 fi
 
+if [ "$INPUT_CLOUD_SQL_INSTANCE_NAME" ]
+then
+    CLOUD_SQL_FLAG="--add-cloudsql-instances=$INPUT_CLOUD_SQL_INSTANCE_NAME"
+fi
+
 gcloud auth activate-service-account --key-file="$HOME"/gcloud.json --project "$INPUT_PROJECT"
 
 gcloud beta run deploy "$INPUT_SERVICE" \
@@ -44,4 +49,5 @@ gcloud beta run deploy "$INPUT_SERVICE" \
   ${ALLOW_UNAUTH_FLAG} \
   ${MEMORY_FLAG} \
   ${CONCURRENCY_FLAG} \
-  ${ENV_FLAG}
+  ${ENV_FLAG} \
+  ${CLOUD_SQL_FLAG}
