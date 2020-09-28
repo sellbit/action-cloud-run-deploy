@@ -32,6 +32,9 @@ inputs:
   cloud_sql_instance_name:
     description: 'GCP Cloud SQL Instance'
     required: false
+  env:
+    description: 'Envvars to provide to container via gcloud'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
