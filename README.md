@@ -20,6 +20,8 @@ In your actions workflow, somewhere after the step that pushes
     allow_unauth: [true or false]
     env: [path-to-env-file]
     service key: ${{ secrets.GCLOUD_AUTH }}
+    timeout: 10m
+    service_account: account-name@PROJECT_ID.iam.gserviceaccount.com
 ```
 
 Your `GCLOUD_AUTH` secret (or whatever you name it) must be a base64 encoded

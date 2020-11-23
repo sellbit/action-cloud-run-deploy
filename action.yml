@@ -35,6 +35,13 @@ inputs:
   env:
     description: 'Envvars to provide to container via gcloud'
     required: false
+  timeout:
+    description: 'Maximum request execution time'
+    required: false
+  service_account:
+    description: 'Service account associated with the revision of the service'
+    required: false
+
 runs:
   using: 'docker'
   image: 'Dockerfile'

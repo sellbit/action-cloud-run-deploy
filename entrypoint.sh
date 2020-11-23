@@ -26,6 +26,15 @@ then
     CONCURRENCY_FLAG="--concurrency=$INPUT_CONCURRENCY"
 fi
 
+if [ "$INPUT_TIMEOUT" ]
+then
+    TIMEOUT_FLAG="--timeout=$INPUT_TIMEOUT"
+fi
+
+if [ "$INPUT_SERVICE_ACCOUNT" ]
+then
+    SERVICE_ACCOUNT_FLAG="--service-account=$SERVICE_ACCOUNT"
+fi
 
 if [ "$ENVS" ]
 then
@@ -50,4 +59,6 @@ gcloud beta run deploy "$INPUT_SERVICE" \
   ${MEMORY_FLAG} \
   ${CONCURRENCY_FLAG} \
   ${ENV_FLAG} \
-  ${CLOUD_SQL_FLAG}
+  ${CLOUD_SQL_FLAG} \
+  ${TIMEOUT_FLAG} \
+  ${SERVICE_ACCOUNT_FLAG}
